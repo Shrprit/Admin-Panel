@@ -105,7 +105,10 @@ export class ListingComponent implements OnInit {
     })
   }
   addBook() {
-        this.bookServie.addBook(this.bookForm.value,uuid.v4());
+        this.bookServie.addBook(this.bookForm.value,uuid.v4()).subscribe(res => {
+          console.log("res",res);
+          
+        });
         this.toast.success("Add Successfully");
   }
  
@@ -121,7 +124,9 @@ export class ListingComponent implements OnInit {
   }
 
   deleteBook(book){
-    this.bookServie.deleteBook(book["_id"]);
+    this.bookServie.deleteBook(book["_id"]).subscribe(res => {
+      //todo
+    });
     this.toast.success("deleted Suesfully");
   }
 }

@@ -4,6 +4,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BookstoreService } from '../services/bookstore.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../services/auth.service';
 import * as uuid from 'uuid';
 import { ThrowStmt } from '@angular/compiler';
 @Component({
@@ -38,7 +39,9 @@ export class ListingComponent implements OnInit {
   });
   constructor(private storage: AngularFireStorage,
     private bookServie: BookstoreService,
-    public toast: ToastrService) { }
+    public auth: AuthService,
+    public toast: ToastrService,
+    ) { }
 
   ngOnInit(): void {
     this.getBooks();

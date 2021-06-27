@@ -28,20 +28,20 @@ export class AuthService {
 
 
 
-  async emailSignUp(userFrom) {
-    console.log("here");
+  // async emailSignUp(userFrom) {
+  //   console.log("here");
     
-    this.afAuth.createUserWithEmailAndPassword(userFrom.email, userFrom.password).then(u => {
-      if (u.additionalUserInfo.isNewUser) {
-        const user: any = u.user;
-        console.log("user",user);
+  //   this.afAuth.createUserWithEmailAndPassword(userFrom.email, userFrom.password).then(u => {
+  //     if (u.additionalUserInfo.isNewUser) {
+  //       const user: any = u.user;
+  //       console.log("user",user);
         
-                return   this.router.navigate(['/']);;
-      }
-    }).catch(err => {
-      console.log('User Already Exists, Please login', 'Unable to Create Account');
-    });
-  }
+  //               return   this.router.navigate(['/']);;
+  //     }
+  //   }).catch(err => {
+  //     console.log('User Already Exists, Please login', 'Unable to Create Account');
+  //   });
+  // }
 
   async emailSignIn(userFrom : any) {
     console.log("reaaaaaaaaaaaaaaaa");
